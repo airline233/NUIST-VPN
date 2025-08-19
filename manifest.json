@@ -19,6 +19,8 @@
 	"homepage_url": "https://qwertycxz.top",
 	"incognito": "split",
 	"permissions": [
-		"tabs"
+		"tabs",
+		"scripting"
 	]
+
 }
