@@ -39,12 +39,11 @@ async function encrypt(domainWithPort) {
 
 // 监听 action 点击事件
 chrome.action.onClicked.addListener(async function (tab) {
-    // 目标 VPN 地址前缀
-    if (url.protocol === "http:") const VpnPrefix = "https://client.vpn.nuist.edu.cn/http/webvpn";
-    if (url.protocol === "https:") const VpnPrefix = "https://client.vpn.nuist.edu.cn/https/webvpn";
-
     // 解析当前 URL
     let url = new URL(tab.url);
+
+    let VpnPrefix = url.protocol + "//client.vpn.nuist.edu.cn/http/webvpn";
+
     let domainWithPort = url.host; // 包括域名和端口（如果有）
     let encryptedDomain = await encrypt(domainWithPort);
 
