@@ -12,9 +12,7 @@
 		"default_icon": "icon.png"
 	},
 	"background": {
-		"service_worker": [
-			"bg.js"
-		]
+		"service_worker": "bg.js"
 	},
 	"homepage_url": "https://qwertycxz.top",
 	"incognito": "split",
@@ -24,6 +22,7 @@
 	]
 
 }
+
 
 
 
