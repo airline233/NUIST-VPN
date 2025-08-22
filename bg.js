@@ -42,7 +42,7 @@ chrome.action.onClicked.addListener(async function (tab) {
     // 解析当前 URL
     let url = new URL(tab.url);
 
-    let VpnPrefix = url.protocol + "//client.vpn.nuist.edu.cn/http/webvpn";
+    let VpnPrefix = `https://client.vpn.nuist.edu.cn/${url.protocol}/webvpn`;
 
     let domainWithPort = url.host; // 包括域名和端口（如果有）
     let encryptedDomain = await encrypt(domainWithPort);
@@ -52,4 +52,5 @@ chrome.action.onClicked.addListener(async function (tab) {
     // 跳转到新的 URL
     chrome.tabs.create({ url: newUrl });
 });
+
 
